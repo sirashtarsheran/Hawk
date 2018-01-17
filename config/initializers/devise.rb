@@ -27,7 +27,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  config.omniauth :facebook, '138055643539146', 'c4a2af15aca6fdc5b25108769f0ebaa6'
+  config.omniauth :facebook, '1295488160596834', '02cba52a34196ee442cdf0e79c3053b5'
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for

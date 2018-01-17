@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+@import "bootstrap";
+.navbar { font-family: 'Oswald', sans-serif !important; }
+
+.navbar-nav a {
+    color: #ccc;
+    font-weight: 550;
+    font-size: 16px;
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active{
+    color: #2bc7d9;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover  {
+    color: #2bc7d9;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.btn-dark{
+    font-weight: 550;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px;
+}
+
+.btn-hawk-primary{
+    color: #fff;
+    background-color: #2bc7d9;
+    border-color: #2bc7d9;
+    font-weight: 550;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px;
+}
+
+.div {
+    padding-bottom:  10px;
+}
+
+.btn-hawk-social{
+    background-color: #4267b2;
+    font-weight: 550;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px;
+}
+
+ .btn-hawk-social:hover{
+    background-color: #385898;
+}
+
+.btn-hawk-secondary{
+    font-weight: 550;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px;
+}
+
+.btn-hawk-primary:hover {
+  background-color: #239eb0;
+  border-color: #239eb0;
+}
+
+.hvrcenter {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.hvrcenter:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #ECF0F1;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvrcenter:hover:before, .hvrcenter:focus:before, .hvrcenter:active:before {
+  left: 0;
+  right: 0;
+}

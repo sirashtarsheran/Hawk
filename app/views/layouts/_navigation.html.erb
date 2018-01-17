@@ -1,0 +1,64 @@
+<script type="text/javascript">
+  $.ajax({
+    type: "GET",
+    url: "https://www.bitcointoyou.com/api/ticker.aspx",
+    data: {},
+    success: function (result) {
+        var myObj = JSON.parse(result);
+        var cotacaoBTC = myObj.ticker.last;
+        var aux = ((cotacaoBTC * 5) / 100);
+        cotacaoBTC = aux + Math.round(cotacaoBTC);
+        $("#valorBitcoin").html(parseInt(cotacaoBTC));
+    },
+    error: function (x, e) { console.log(e); } // must be function, not implicit call
+  });
+</script>
+
+<header class="navbar navbar-expand navbar-dark bg-dark navbar-custom">
+  <div class="col-md-1"></div>
+  <div class="navbar-brand mr-0 mr-md-2">
+    <% if user_signed_in? %>
+      <%= link_to account_desktop_path do %>
+        <%= image_tag('logo.png', height: '40', width: '30', class: "navbar-brand mr-0 mr-md-2") %>
+      <% end %>
+    <% else %>
+      <%= link_to root_path do %>
+        <%= image_tag('logo.png', height: '40', width: '30', class: "navbar-brand mr-0 mr-md-2") %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="navbar-nav-scroll">
+
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <% if user_signed_in? %>
+        <li class="nav-item"><%= link_to "HAWK", account_desktop_path, class: "nav-item nav-link active" %></li>
+        <li class="nav-item" style="color:#fff;">
+          <strong class="nav-link"><div class="badge-info badge">R$ <spam id="valorBitcoin" href=""></spam>,00 BTC</div></strong>
+        </li>
+      <% else %>
+          <li class="nav-item"><%= link_to "HAWK", root_path, class: "nav-item nav-link active" %></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Começar</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Sobre nós</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Investimentos</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Afiliados</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Novidades</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">FAQ</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Representantes</a></li>
+          <li class="nav-item"><a class="nav-item nav-link hvrcenter" href="#">Contato</a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    <% if user_signed_in? %>
+      <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+    <% else %>
+      <li class="nav-item" style="color:#fff;">
+        <strong class="nav-link"><div class="badge-info badge">R$ <spam id="valorBitcoin" href=""></spam>,00 BTC</div></strong>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Criar conta</a></li>
+      <li class="nav-item"><%= link_to t('login'), new_user_session_path, class: "nav-link" %></li>
+    <% end %>
+  </ul>
+  <div class="col-md-1"></div>
+</header>

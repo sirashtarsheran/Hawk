@@ -1,4 +1,7 @@
 pt-BR:
+  or: "ou"
+  get_starded: "Invista Agora com Hawk"
+  sub_get_starded: "Dois cliques para começar a investir"
   hello: "Olá"
   login: "Entrar"
   signup: "Registre-se"
@@ -7,23 +10,39 @@ pt-BR:
   rememberme: "Lembre-me"
   password: "Senha"
   email: "Email"
-  characters minimum: "caracteres mínimo"
+  characters_minimum: "caracteres mínimo"
   password_confirmation: "Confirmação de senha"
   signup: "Registrar"
   sendmeresetpass: "Resetar senha"
+  Email: "email"
   activerecord:
     errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Email não pode ficar em branco
+"
+            password:
+              blank: "Senha não pode ficar em branco
+"
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models:
-      user: "Usuário"
-    atrributes:
       user:
-        email: 'Email'
-        password: "Senha"
+        one: "usuário"
+        other: "usuários"
+      attributes:
+        user:
+          email:
+            one: 'email'
+            other: 'emails'
+          password:
+            one: 'senha'
+            other: 'senhas'
   date:
     abbr_day_names:
     - Dom
@@ -124,7 +143,7 @@ pt-BR:
       second: Segundo
       year: Ano
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: deve ser aceito
       blank: não pode ficar em branco
