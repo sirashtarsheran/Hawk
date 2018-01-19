@@ -18,7 +18,7 @@
   <div class="col-md-1"></div>
   <div class="navbar-brand mr-0 mr-md-2">
     <% if user_signed_in? %>
-      <%= link_to account_desktop_path do %>
+      <%= link_to desktop_path do %>
         <%= image_tag('logo.png', height: '40', width: '30', class: "navbar-brand mr-0 mr-md-2") %>
       <% end %>
     <% else %>
@@ -31,7 +31,7 @@
 
     <ul class="navbar-nav bd-navbar-nav flex-row">
       <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to "HAWK", account_desktop_path, class: "nav-item nav-link active" %></li>
+        <li class="nav-item"><%= link_to "HAWK", desktop_path, class: "nav-item nav-link active" %></li>
         <li class="nav-item" style="color:#fff;">
           <strong class="nav-link"><div class="badge-info badge">R$ <spam id="valorBitcoin" href=""></spam>,00 BTC</div></strong>
         </li>

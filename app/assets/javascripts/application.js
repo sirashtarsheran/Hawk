@@ -15,4 +15,15 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require bootstrap-slider
 //= require_tree .
+
+$( document ).on('turbolinks:load', function() {
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+});
